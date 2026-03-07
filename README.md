@@ -88,7 +88,7 @@ Follow these steps to run the project locally.
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-link>
+git clone (https://github.com/jiyotirmaansingh/Heart_Disease_Analysis.git)
 cd heart_disease_project
 ```
 

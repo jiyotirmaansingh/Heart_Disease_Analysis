@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Heart Disease Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#f4f6f9;
+color:#1f2937;
+}
+
+/* APP LAYOUT */
+
+.app{
+display:flex;
+min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:220px;
+background:white;
+border-right:1px solid #e5e7eb;
+padding:20px;
+}
+
+.sidebar h2{
+font-size:16px;
+margin-bottom:25px;
+}
+
+.sidebar a{
+display:block;
+padding:10px 8px;
+text-decoration:none;
+color:#374151;
+border-radius:6px;
+font-size:14px;
+margin-bottom:4px;
+}
+
+.sidebar a:hover{
+background:#f3f4f6;
+}
+
+/* MAIN CONTENT */
+
+.main{
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+/* TOPBAR */
+
+.topbar{
+height:60px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 30px;
+background:white;
+border-bottom:1px solid #e5e7eb;
+}
+
+.toggle{
+cursor:pointer;
+font-size:14px;
+}
+
+/* HEADER */
+
+.header{
+padding:30px;
+}
+
+.header h1{
+font-size:26px;
+margin-bottom:5px;
+}
+
+.header p{
+font-size:14px;
+color:#6b7280;
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+padding:0 30px 30px 30px;
+}
+
+.card{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:8px;
+padding:18px;
+}
+
+.card h2{
+font-size:22px;
+margin-bottom:4px;
+}
+
+.card p{
+font-size:13px;
+color:#6b7280;
+}
+
+/* DASHBOARD PANEL */
+
+.dashboard-wrapper{
+padding:0 30px 40px 30px;
+}
+
+.dashboard-container{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:10px;
+overflow:hidden;
+position:relative;
+}
+
+iframe{
+width:100%;
+height:80vh;
+border:none;
+}
+
+/* LOADING */
+
+.skeleton{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(90deg,#eeeeee,#f5f5f5,#eeeeee);
+animation:loading 1.2s infinite;
+}
+
+@keyframes loading{
+0%{opacity:0.6}
+50%{opacity:1}
+100%{opacity:0.6}
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+font-size:13px;
+color:#6b7280;
+padding-bottom:30px;
+}
+
+/* DARK MODE */
+
+.dark{
+background:#0f172a;
+color:white;
+}
+
+.dark .sidebar{
+background:#1e293b;
+border:none;
+}
+
+.dark .topbar{
+background:#1e293b;
+border:none;
+}
+
+.dark .card{
+background:#1e293b;
+border:none;
+}
+
+.dark .dashboard-container{
+background:#1e293b;
+border:none;
+}
+
+.dark .sidebar a{
+color:#cbd5f5;
+}
+
+.dark .footer{
+color:#cbd5f5;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h2>Analytics</h2>
+
+<a href="/">Home</a>
+<a href="/dashboard">Dashboard</a>
+<a href="#">Patients</a>
+<a href="#">Health Metrics</a>
+<a href="#">Reports</a>
+
+</div>
+
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+<div class="topbar">
+<div>Heart Disease Analytics</div>
+<div class="toggle" onclick="toggleMode()">Dark Mode</div>
+</div>
+
+
+<div class="header">
+<h1>Heart Disease Analysis Dashboard</h1>
+<p>Interactive visualization powered by Tableau</p>
+</div>
+
+
+<!-- KPI CARDS -->
+
+<div class="stats">
+
+<div class="card">
+<h2>303</h2>
+<p>Total Patients</p>
+</div>
+
+<div class="card">
+<h2>165</h2>
+<p>Heart Disease Cases</p>
+</div>
+
+<div class="card">
+<h2>138</h2>
+<p>Healthy Patients</p>
+</div>
+
+<div class="card">
+<h2>54%</h2>
+<p>Risk Ratio</p>
+</div>
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div class="dashboard-wrapper">
+
+<div class="dashboard-container">
+
+<div class="skeleton" id="loader"></div>
+
+<iframe
+src="https://public.tableau.com/views/Book11_17728230443520/Dashboard1?:embed=y&:showVizHome=no"
+onload="hideLoader()">
+</iframe>
+
+</div>
+
+</div>
+
+
+<div class="footer">
+Heart Disease Analysis Project • Data Visualization using Tableau
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function toggleMode(){
+document.body.classList.toggle("dark");
+}
+
+function hideLoader(){
+document.getElementById("loader").style.display="none";
+}
+
+</script>
+
+</body>
+</html>

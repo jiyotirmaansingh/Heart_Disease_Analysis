@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Heart Disease Analysis</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#f4f6f9;
+color:#1f2937;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 40px;
+background:white;
+border-bottom:1px solid #e5e7eb;
+}
+
+.logo{
+font-weight:600;
+font-size:16px;
+}
+
+.toggle{
+cursor:pointer;
+font-size:14px;
+color:#555;
+}
+
+/* HERO */
+
+.hero{
+max-width:900px;
+margin:80px auto 40px auto;
+text-align:center;
+padding:0 20px;
+}
+
+.hero h1{
+font-size:36px;
+font-weight:600;
+margin-bottom:16px;
+}
+
+.hero p{
+color:#6b7280;
+font-size:16px;
+line-height:1.6;
+margin-bottom:28px;
+}
+
+/* BUTTON */
+
+.button{
+display:inline-block;
+padding:12px 22px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-size:14px;
+}
+
+.button:hover{
+background:#1d4ed8;
+}
+
+/* FEATURE SECTION */
+
+.features{
+max-width:1000px;
+margin:60px auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+padding:0 20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:8px;
+border:1px solid #e5e7eb;
+}
+
+.card h3{
+font-size:16px;
+margin-bottom:8px;
+}
+
+.card p{
+font-size:14px;
+color:#6b7280;
+line-height:1.5;
+}
+
+/* DARK MODE */
+
+.dark{
+background:#0f172a;
+color:white;
+}
+
+.dark .navbar{
+background:#1e293b;
+border-bottom:none;
+}
+
+.dark .card{
+background:#1e293b;
+border:none;
+}
+
+.dark .hero p{
+color:#cbd5f5;
+}
+
+.dark .button{
+background:#3b82f6;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+<div class="logo">Heart Disease Analytics</div>
+<div class="toggle" onclick="toggleMode()">Dark Mode</div>
+</div>
+
+<div class="hero">
+<h1>Heart Disease Analysis</h1>
+<p>
+This project explores heart disease patterns using interactive visualizations and healthcare datasets.
+</p>
+
+<a class="button" href="/dashboard">Open Dashboard</a>
+</div>
+
+<div class="features">
+
+<div class="card">
+<h3>Interactive Dashboard</h3>
+<p>Analyze heart disease data through interactive charts and visual insights.</p>
+</div>
+
+<div class="card">
+<h3>Health Indicators</h3>
+<p>Explore relationships between BMI, age, physical activity and cardiovascular risk.</p>
+</div>
+
+<div class="card">
+<h3>Data Visualization</h3>
+<p>Visual analytics powered by Tableau to reveal meaningful healthcare patterns.</p>
+</div>
+
+</div>
+
+<script>
+function toggleMode(){
+document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
